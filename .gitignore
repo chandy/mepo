@@ -1,0 +1,13 @@
+node_modules
+dist
+.output
+.wrangler
+.DS_Store
+.cache
+.env
+.env.*
+!.env.example
+*.log
+node_modules/.stylex
+.vite
+worker-configuration.d.ts

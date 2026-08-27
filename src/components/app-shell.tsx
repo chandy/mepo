@@ -19,19 +19,28 @@ const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
-    height: layout.headerHeight,
+    height: {
+      default: '3.75rem',
+      '@media (min-width: 768px)': layout.headerHeight,
+    },
     paddingInline: '1rem',
     borderBottomWidth: 1,
     borderBottomStyle: 'solid',
     borderBottomColor: colors.border,
   },
   title: {
-    fontSize: '0.875rem',
+    fontSize: {
+      default: '1.0625rem',
+      '@media (min-width: 768px)': '0.875rem',
+    },
     fontWeight: 600,
     letterSpacing: '-0.01em',
   },
   content: {
-    padding: '1.5rem',
+    padding: {
+      default: '1.25rem',
+      '@media (min-width: 768px)': '1.5rem',
+    },
   },
 })
 
@@ -42,7 +51,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <AppSidebar />
         <SidebarInset {...stylex.props(styles.inset)}>
           <header {...stylex.props(styles.header)}>
-            <SidebarTrigger />
+            <SidebarTrigger className="size-11 md:size-8" />
             <span {...stylex.props(styles.title)}>mepo</span>
           </header>
           <div {...stylex.props(styles.content)}>{children}</div>
